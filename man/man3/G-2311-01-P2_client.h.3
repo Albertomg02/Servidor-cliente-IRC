@@ -1,0 +1,79 @@
+.TH "includes/G-2311-01-P2_client.h" 3 "Domingo, 7 de Mayo de 2017" "Redes 2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+includes/G-2311-01-P2_client.h \- : Funciones del módulo client  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'G\-2311\-01\-P1_general\&.h'\fP
+.br
+\fC#include 'G\-2311\-01\-P2_client_funciones\&.h'\fP
+.br
+\fC#include 'G\-2311\-01\-P2_client_funciones_user\&.h'\fP
+.br
+\fC#include 'G\-2311\-01\-P1_socket\&.h'\fP
+.br
+\fC#include <redes2/ircxchat\&.h>\fP
+.br
+
+.SS "Estructuras de datos"
+
+.in +1c
+.ti -1c
+.RI "struct \fBparam_sendfile\fP"
+.br
+.in -1c
+.SS "Funciones"
+
+.in +1c
+.ti -1c
+.RI "void * \fBlaunch_read\fP (void *s)"
+.br
+.ti -1c
+.RI "void * \fBlaunch_file\fP (void *pr)"
+.br
+.in -1c
+.SH "Descripción detallada"
+.PP 
+: Funciones del módulo client 
+
+
+.PP
+\fBAutor:\fP
+.RS 4
+Oscar Garcia de Lara Parreño & Santiago Gomez Aguirre\&. Grupo: 2311 
+.RE
+.PP
+\fBFecha:\fP
+.RS 4
+07-05-2017 
+.RE
+.PP
+
+.PP
+Definición en el archivo \fBG\-2311\-01\-P2_client\&.h\fP\&.
+.SH "Documentación de las funciones"
+.PP 
+.SS "void* launch_file (void * pr)"
+Función que envía el archivo que se quiere transmitir\&.  launch_file 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIpr\fP Estructura que guarda la información necesaria para el envío 
+.RE
+.PP
+
+.SS "void* launch_read (void * s)"
+Funcion que se queda escuchando al servidor  launch_read 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIs\fP parametro donde se le pasa el valor del socket 
+.RE
+.PP
+
+.SH "Autor"
+.PP 
+Generado automáticamente por Doxygen para Redes 2 del código fuente\&.

@@ -1,0 +1,360 @@
+.TH "includes/G-2311-01-P2_client_funciones_user.h" 3 "Domingo, 7 de Mayo de 2017" "Redes 2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+includes/G-2311-01-P2_client_funciones_user.h \- : Funciones del módulo client funciones user  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'G\-2311\-01\-P1_general\&.h'\fP
+.br
+\fC#include 'G\-2311\-01\-P1_utils\&.h'\fP
+.br
+\fC#include <redes2/ircxchat\&.h>\fP
+.br
+
+.SS "Funciones"
+
+.in +1c
+.ti -1c
+.RI "int \fBinicializar_array_cu\fP ()"
+.br
+.ti -1c
+.RI "int \fBfuncion_default_cu\fP (char *command, int socket)"
+.br
+.ti -1c
+.RI "int \fBfuncion_join_cu\fP (char *command, int socket)"
+.br
+.ti -1c
+.RI "int \fBfuncion_priv_cu\fP (char *command, int socket)"
+.br
+.ti -1c
+.RI "int \fBfuncion_nick_cu\fP (char *command, int socket)"
+.br
+.ti -1c
+.RI "int \fBfuncion_part_cu\fP (char *command, int socket)"
+.br
+.ti -1c
+.RI "int \fBfuncion_names_cu\fP (char *command, int socket)"
+.br
+.ti -1c
+.RI "int \fBfuncion_who_cu\fP (char *command, int socket)"
+.br
+.ti -1c
+.RI "int \fBfuncion_whois_cu\fP (char *command, int socket)"
+.br
+.ti -1c
+.RI "int \fBfuncion_motd_cu\fP (char *command, int socket)"
+.br
+.ti -1c
+.RI "int \fBfuncion_topic_cu\fP (char *command, int socket)"
+.br
+.ti -1c
+.RI "int \fBfuncion_mode_cu\fP (char *command, int socket)"
+.br
+.ti -1c
+.RI "int \fBfuncion_kick_cu\fP (char *command, int socket)"
+.br
+.ti -1c
+.RI "int \fBfuncion_list_cu\fP (char *command, int socket)"
+.br
+.ti -1c
+.RI "int \fBfuncion_away_cu\fP (char *command, int socket)"
+.br
+.ti -1c
+.RI "int \fBfuncion_query_cu\fP (char *command, int socket)"
+.br
+.ti -1c
+.RI "int \fBfuncion_quit_cu\fP (char *command, int socket)"
+.br
+.in -1c
+.SH "Descripción detallada"
+.PP 
+: Funciones del módulo client funciones user 
+
+
+.PP
+\fBAutor:\fP
+.RS 4
+Oscar Garcia de Lara Parreño & Santiago Gomez Aguirre\&. Grupo: 2311 
+.RE
+.PP
+\fBFecha:\fP
+.RS 4
+07-05-2017 
+.RE
+.PP
+
+.PP
+Definición en el archivo \fBG\-2311\-01\-P2_client_funciones_user\&.h\fP\&.
+.SH "Documentación de las funciones"
+.PP 
+.SS "int funcion_away_cu (char * command, int socket)"
+Función que envía la información del comando away introducido en el cliente al servidor\&.  funcion_away_cu 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIcommand\fP Cadena del comando introducido 
+.br
+\fIsocket\fP Socket en uso 
+.RE
+.PP
+\fBDevuelve:\fP
+.RS 4
+int: OK si cumple su funcionalidad sin errores\&. ERR si se produce cualquier error\&. 
+.RE
+.PP
+
+.SS "int funcion_default_cu (char * command, int socket)"
+Función que se activa por defecto al encontrar un comando desconocido del usuario para el cliente\&.  funcion_default_cu 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIcommand\fP Cadena del comando introducido 
+.br
+\fIsocket\fP Socket en uso 
+.RE
+.PP
+\fBDevuelve:\fP
+.RS 4
+int: ERR dado que es un comando desconocido\&. 
+.RE
+.PP
+
+.SS "int funcion_join_cu (char * command, int socket)"
+Función que envía la información del comando join introducido en el cliente al servidor\&.  funcion_join_cu 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIcommand\fP Cadena del comando introducido 
+.br
+\fIsocket\fP Socket en uso 
+.RE
+.PP
+\fBDevuelve:\fP
+.RS 4
+int: OK si cumple su funcionalidad sin errores\&. ERR si se produce cualquier error\&. 
+.RE
+.PP
+
+.SS "int funcion_kick_cu (char * command, int socket)"
+Función que envía la información del comando kick introducido en el cliente al servidor\&.  funcion_kick_cu 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIcommand\fP Cadena del comando introducido 
+.br
+\fIsocket\fP Socket en uso 
+.RE
+.PP
+\fBDevuelve:\fP
+.RS 4
+int: OK si cumple su funcionalidad sin errores\&. ERR si se produce cualquier error\&. 
+.RE
+.PP
+
+.SS "int funcion_list_cu (char * command, int socket)"
+Función que envía la información del comando list introducido en el cliente al servidor\&.  funcion_list_cu 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIcommand\fP Cadena del comando introducido 
+.br
+\fIsocket\fP Socket en uso 
+.RE
+.PP
+\fBDevuelve:\fP
+.RS 4
+int: OK si cumple su funcionalidad sin errores\&. ERR si se produce cualquier error\&. 
+.RE
+.PP
+
+.SS "int funcion_mode_cu (char * command, int socket)"
+Función que envía la información del comando mode introducido en el cliente al servidor\&.  funcion_mode_cu 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIcommand\fP Cadena del comando introducido 
+.br
+\fIsocket\fP Socket en uso 
+.RE
+.PP
+\fBDevuelve:\fP
+.RS 4
+int: OK si cumple su funcionalidad sin errores\&. ERR si se produce cualquier error\&. 
+.RE
+.PP
+
+.SS "int funcion_motd_cu (char * command, int socket)"
+Función que envía la información del comando motd introducido en el cliente al servidor\&.  funcion_motd_cu 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIcommand\fP Cadena del comando introducido 
+.br
+\fIsocket\fP Socket en uso 
+.RE
+.PP
+\fBDevuelve:\fP
+.RS 4
+int: OK si cumple su funcionalidad sin errores\&. ERR si se produce cualquier error\&. 
+.RE
+.PP
+
+.SS "int funcion_names_cu (char * command, int socket)"
+Función que envía la información del comando names introducido en el cliente al servidor\&.  funcion_names_cu 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIcommand\fP Cadena del comando introducido 
+.br
+\fIsocket\fP Socket en uso 
+.RE
+.PP
+\fBDevuelve:\fP
+.RS 4
+int: OK si cumple su funcionalidad sin errores\&. ERR si se produce cualquier error\&. 
+.RE
+.PP
+
+.SS "int funcion_nick_cu (char * command, int socket)"
+Función que envía la información del comando nick introducido en el cliente al servidor\&.  funcion_nick_cu 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIcommand\fP Cadena del comando introducido 
+.br
+\fIsocket\fP Socket en uso 
+.RE
+.PP
+\fBDevuelve:\fP
+.RS 4
+int: OK si cumple su funcionalidad sin errores\&. ERR si se produce cualquier error\&. 
+.RE
+.PP
+
+.SS "int funcion_part_cu (char * command, int socket)"
+Función que envía la información del comando part introducido en el cliente al servidor\&.  funcion_part_cu 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIcommand\fP Cadena del comando introducido 
+.br
+\fIsocket\fP Socket en uso 
+.RE
+.PP
+\fBDevuelve:\fP
+.RS 4
+int: OK si cumple su funcionalidad sin errores\&. ERR si se produce cualquier error\&. 
+.RE
+.PP
+
+.SS "int funcion_priv_cu (char * command, int socket)"
+Función que envía la información del mensaje privado introducido en el cliente al servidor\&.  funcion_priv_cu 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIcommand\fP Cadena del comando introducido 
+.br
+\fIsocket\fP Socket en uso 
+.RE
+.PP
+\fBDevuelve:\fP
+.RS 4
+int: OK si cumple su funcionalidad sin errores\&. ERR si se produce cualquier error\&. 
+.RE
+.PP
+
+.SS "int funcion_query_cu (char * command, int socket)"
+Función que envía la información del comando query introducido en el cliente al servidor\&.  funcion_query_cu 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIcommand\fP Cadena del comando introducido 
+.br
+\fIsocket\fP Socket en uso 
+.RE
+.PP
+\fBDevuelve:\fP
+.RS 4
+int: OK si cumple su funcionalidad sin errores\&. ERR si se produce cualquier error\&. 
+.RE
+.PP
+
+.SS "int funcion_quit_cu (char * command, int socket)"
+Función que envía la información del comando quit introducido en el cliente al servidor\&.  funcion_quit_cu 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIcommand\fP Cadena del comando introducido 
+.br
+\fIsocket\fP Socket en uso 
+.RE
+.PP
+\fBDevuelve:\fP
+.RS 4
+int: OK si cumple su funcionalidad sin errores\&. ERR si se produce cualquier error\&. 
+.RE
+.PP
+
+.SS "int funcion_topic_cu (char * command, int socket)"
+Función que envía la información del comando topic introducido en el cliente al servidor\&.  funcion_topic_cu 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIcommand\fP Cadena del comando introducido 
+.br
+\fIsocket\fP Socket en uso 
+.RE
+.PP
+\fBDevuelve:\fP
+.RS 4
+int: OK si cumple su funcionalidad sin errores\&. ERR si se produce cualquier error\&. 
+.RE
+.PP
+
+.SS "int funcion_who_cu (char * command, int socket)"
+Función que envía la información del comando who introducido en el cliente al servidor\&.  funcion_who_cu 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIcommand\fP Cadena del comando introducido 
+.br
+\fIsocket\fP Socket en uso 
+.RE
+.PP
+\fBDevuelve:\fP
+.RS 4
+int: OK si cumple su funcionalidad sin errores\&. ERR si se produce cualquier error\&. 
+.RE
+.PP
+
+.SS "int funcion_whois_cu (char * command, int socket)"
+Función que envía la información del comando whois introducido en el cliente al servidor\&.  funcion_whois_cu 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIcommand\fP Cadena del comando introducido 
+.br
+\fIsocket\fP Socket en uso 
+.RE
+.PP
+\fBDevuelve:\fP
+.RS 4
+int: OK si cumple su funcionalidad sin errores\&. ERR si se produce cualquier error\&. 
+.RE
+.PP
+
+.SS "int inicializar_array_cu ()"
+Función que inicializa la lista de comandos del usuario que acepta el cliente\&.  inicializar_array_cu 
+.PP
+\fBDevuelve:\fP
+.RS 4
+int: OK dado que no se contempla ningún escenario de error\&. 
+.RE
+.PP
+
+.SH "Autor"
+.PP 
+Generado automáticamente por Doxygen para Redes 2 del código fuente\&.

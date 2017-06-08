@@ -1,0 +1,232 @@
+.TH "includes/G-2311-01-P1_server.h" 3 "Domingo, 7 de Mayo de 2017" "Redes 2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+includes/G-2311-01-P1_server.h \- : Funciones del módulo server  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <getopt\&.h>\fP
+.br
+\fC#include 'G\-2311\-01\-P1_server_funciones\&.h'\fP
+.br
+\fC#include 'G\-2311\-01\-P1_general\&.h'\fP
+.br
+\fC#include 'G\-2311\-01\-P1_socket\&.h'\fP
+.br
+\fC#include 'G\-2311\-01\-P1_semaforos\&.h'\fP
+.br
+
+.SS "Estructuras de datos"
+
+.in +1c
+.ti -1c
+.RI "struct \fBparam\fP"
+.br
+.in -1c
+.SS "'defines'"
+
+.in +1c
+.ti -1c
+.RI "#define \fBmax\fP(a,  b)   (((a) > (b)) ? (a) : (b))"
+.br
+.in -1c
+.SS "Funciones"
+
+.in +1c
+.ti -1c
+.RI "int \fBiniciar_server\fP (int puerto)"
+.br
+.ti -1c
+.RI "int \fBrun_server\fP (int descriptor)"
+.br
+.ti -1c
+.RI "void \fBprotocolo_PINGPONG\fP (int sig)"
+.br
+.ti -1c
+.RI "int \fBlanza_hilos\fP (int index)"
+.br
+.ti -1c
+.RI "void * \fBlaunch_service\fP (void *pr)"
+.br
+.ti -1c
+.RI "int \fBrun_server_echo\fP (int descriptor)"
+.br
+.ti -1c
+.RI "void \fBservidor_echo\fP (int puerto)"
+.br
+.ti -1c
+.RI "int \fBservidor_irc\fP (int puerto)"
+.br
+.ti -1c
+.RI "int \fBmaxDescriptorCliente\fP ()"
+.br
+.ti -1c
+.RI "void \fBeliminaCerrados\fP ()"
+.br
+.ti -1c
+.RI "void \fBeliminarUser\fP (int socket)"
+.br
+.in -1c
+.SH "Descripción detallada"
+.PP 
+: Funciones del módulo server 
+
+
+.PP
+\fBAutor:\fP
+.RS 4
+Oscar Garcia de Lara Parreño & Santiago Gomez Aguirre\&. Grupo: 2311 
+.RE
+.PP
+\fBFecha:\fP
+.RS 4
+07-05-2017 
+.RE
+.PP
+
+.PP
+Definición en el archivo \fBG\-2311\-01\-P1_server\&.h\fP\&.
+.SH "Documentación de los 'defines'"
+.PP 
+.SS "#define max(a, b)   (((a) > (b)) ? (a) : (b))"
+[\fBmax(a, b)\fP description]  \fBmax(a, b)\fP 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIa\fP [description] 
+.br
+\fIb\fP 
+.RE
+.PP
+\fBDevuelve:\fP
+.RS 4
+[description] 
+.RE
+.PP
+
+.PP
+Definición en la línea 34 del archivo G\-2311\-01\-P1_server\&.h\&.
+.SH "Documentación de las funciones"
+.PP 
+.SS "void eliminaCerrados ()"
+Elimina del Array de usuarios y clientes los que estan marcados como -1 y lo comprime  eliminaCerrados 
+.SS "void eliminarUser (int socket)"
+Función que termina la sesión de un cliente del servidor\&.  eliminarUser 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIsocket\fP Socket del cliente 
+.RE
+.PP
+
+.SS "int iniciar_server (int puerto)"
+Función que inicia el servidor\&.  iniciar_server 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIpuerto\fP Puerto indicado para el servidor 
+.RE
+.PP
+\fBDevuelve:\fP
+.RS 4
+int: Socket habilitado del servidor\&. ERR si se produce cualquier error\&. 
+.RE
+.PP
+
+.SS "int lanza_hilos (int index)"
+Función que crea hilos para cada cliente del servidor\&.  lanza_hilos 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIindex\fP ID del cliente 
+.RE
+.PP
+\fBDevuelve:\fP
+.RS 4
+int: OK 
+.RE
+.PP
+
+.SS "void* launch_service (void * pr)"
+Función que inicia la funcionalidad de un comando enviado por el cliente al servidor\&.  launch_service 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIpr\fP Estructura que almacenada el ID y el comando del cliente\&. 
+.RE
+.PP
+
+.SS "int maxDescriptorCliente ()"
+Función que devuelve el valor del último socket de los clientes del servidor\&.  maxDescriptorCliente 
+.PP
+\fBDevuelve:\fP
+.RS 4
+int: Número del último socket de los clientes\&. 
+.RE
+.PP
+
+.SS "void protocolo_PINGPONG (int sig)"
+Función que lleva a cabo la funcionalidad del protocolo PingPong para el servidor\&.  protocolo_PINGPONG 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIsig\fP Señal de activación del protocolo 
+.RE
+.PP
+
+.SS "int run_server (int descriptor)"
+Función que mantiene activo el servidor\&.  run_server 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIdescriptor\fP Socket habilitado para el servidor\&. 
+.RE
+.PP
+\fBDevuelve:\fP
+.RS 4
+int: ERR dado que si sale del bucle infinito es debido a un error o a que el servidor ha dejado de estar activo\&. 
+.RE
+.PP
+
+.SS "int run_server_echo (int descriptor)"
+Función que mantiene activo el servidor echo  run_server_echo 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIdescriptor\fP Socket habilitado para el servidor\&. 
+.RE
+.PP
+\fBDevuelve:\fP
+.RS 4
+int: ERR dado que si sale del bucle infinito es debido a un error o a que el servidor ha dejado de estar activo\&. 
+.RE
+.PP
+
+.SS "void servidor_echo (int puerto)"
+Función que monta el servidor echo\&.  servidor_echo 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIpuerto\fP Puerto indicado para el servidor 
+.RE
+.PP
+
+.SS "int servidor_irc (int puerto)"
+Función que monta el servidor irc\&.  servidor_irc 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIpuerto\fP Puerto indicado para el servidor 
+.RE
+.PP
+\fBDevuelve:\fP
+.RS 4
+int: EXIT_FAILURE 
+.RE
+.PP
+
+.SH "Autor"
+.PP 
+Generado automáticamente por Doxygen para Redes 2 del código fuente\&.

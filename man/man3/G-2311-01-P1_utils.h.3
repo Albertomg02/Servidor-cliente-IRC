@@ -1,0 +1,75 @@
+.TH "includes/G-2311-01-P1_utils.h" 3 "Domingo, 7 de Mayo de 2017" "Redes 2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+includes/G-2311-01-P1_utils.h \- : Funciones del módulo utils  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'G\-2311\-01\-P1_general\&.h'\fP
+.br
+
+.SS "Funciones"
+
+.in +1c
+.ti -1c
+.RI "int \fBregistrarMensajes\fP (long codigo, \fBpf_msg\fP handleModule, \fBpf_msg\fP *msg_registrados)"
+.br
+.ti -1c
+.RI "void \fBfreeListas\fP (char ***lista, int num_elems)"
+.br
+.in -1c
+.SH "Descripción detallada"
+.PP 
+: Funciones del módulo utils 
+
+
+.PP
+\fBAutor:\fP
+.RS 4
+Oscar Garcia de Lara Parreño & Santiago Gomez Aguirre\&. Grupo: 2311 
+.RE
+.PP
+\fBFecha:\fP
+.RS 4
+07-05-2017 
+.RE
+.PP
+
+.PP
+Definición en el archivo \fBG\-2311\-01\-P1_utils\&.h\fP\&.
+.SH "Documentación de las funciones"
+.PP 
+.SS "void freeListas (char *** lista, int num_elems)"
+Libera las memoria de una matriz de char  freeListas 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIlista\fP [description] 
+.br
+\fInum_elems\fP [description] 
+.RE
+.PP
+
+.SS "int registrarMensajes (long codigo, \fBpf_msg\fP handleModule, \fBpf_msg\fP * msg_registrados)"
+Registra la funcion en el array  registrarMensajes 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIcodigo\fP indice en el array 
+.br
+\fIhandleModule\fP funcion a registrar 
+.br
+\fImsg_registrados\fP array de funciones 
+.RE
+.PP
+\fBDevuelve:\fP
+.RS 4
+-1 en caso de error 
+.RE
+.PP
+
+.SH "Autor"
+.PP 
+Generado automáticamente por Doxygen para Redes 2 del código fuente\&.

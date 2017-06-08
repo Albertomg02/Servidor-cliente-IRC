@@ -1,0 +1,607 @@
+.TH "includes/G-2311-01-P2_client_funciones.h" 3 "Domingo, 7 de Mayo de 2017" "Redes 2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+includes/G-2311-01-P2_client_funciones.h \- : Funciones del módulo client funciones  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'G\-2311\-01\-P1_general\&.h'\fP
+.br
+\fC#include 'G\-2311\-01\-P1_utils\&.h'\fP
+.br
+\fC#include <redes2/ircxchat\&.h>\fP
+.br
+
+.SS "Estructuras de datos"
+
+.in +1c
+.ti -1c
+.RI "struct \fBparam_recvfile\fP"
+.br
+.in -1c
+.SS "Funciones"
+
+.in +1c
+.ti -1c
+.RI "int \fBinicializar_array_c\fP ()"
+.br
+.ti -1c
+.RI "int \fBfuncion_default_c\fP (char *command, int socket)"
+.br
+.ti -1c
+.RI "int \fBfuncion_rplwelcome_c\fP (char *command, int socket)"
+.br
+.ti -1c
+.RI "int \fBfuncion_join_c\fP (char *command, int socket)"
+.br
+.ti -1c
+.RI "int \fBfuncion_priv_c\fP (char *command, int socket)"
+.br
+.ti -1c
+.RI "void * \fBlaunch_recvfile\fP (void *pr)"
+.br
+.ti -1c
+.RI "int \fBfuncion_nick_c\fP (char *command, int socket)"
+.br
+.ti -1c
+.RI "int \fBfuncion_part_c\fP (char *command, int socket)"
+.br
+.ti -1c
+.RI "int \fBfuncion_ping_c\fP (char *command, int socket)"
+.br
+.ti -1c
+.RI "int \fBfuncion_namrpl_c\fP (char *command, int socket)"
+.br
+.ti -1c
+.RI "int \fBfuncion_namend_c\fP (char *command, int socket)"
+.br
+.ti -1c
+.RI "int \fBfuncion_RplWhoReply_c\fP (char *command, int socket)"
+.br
+.ti -1c
+.RI "int \fBfuncion_RplWhoEnd_c\fP (char *command, int socket)"
+.br
+.ti -1c
+.RI "int \fBfuncion_whoisuser_c\fP (char *command, int socket)"
+.br
+.ti -1c
+.RI "int \fBfuncion_whoisserver_c\fP (char *command, int socket)"
+.br
+.ti -1c
+.RI "int \fBfuncion_whoischannels_c\fP (char *command, int socket)"
+.br
+.ti -1c
+.RI "int \fBfuncion_whoisidle_c\fP (char *command, int socket)"
+.br
+.ti -1c
+.RI "int \fBfuncion_endwhois_c\fP (char *command, int socket)"
+.br
+.ti -1c
+.RI "int \fBfuncion_RplMotdstart_c\fP (char *command, int socket)"
+.br
+.ti -1c
+.RI "int \fBfuncion_RplMotd_c\fP (char *command, int socket)"
+.br
+.ti -1c
+.RI "int \fBfuncion_RplendofMotd_c\fP (char *command, int socket)"
+.br
+.ti -1c
+.RI "int \fBfuncion_RplTopic_c\fP (char *command, int socket)"
+.br
+.ti -1c
+.RI "int \fBfuncion_RplNoTopic_c\fP (char *command, int socket)"
+.br
+.ti -1c
+.RI "int \fBfuncion_mode_c\fP (char *command, int socket)"
+.br
+.ti -1c
+.RI "int \fBfuncion_kick_c\fP (char *command, int socket)"
+.br
+.ti -1c
+.RI "int \fBfuncion_RplList_c\fP (char *command, int socket)"
+.br
+.ti -1c
+.RI "int \fBfuncion_RplListEnd_c\fP (char *command, int socket)"
+.br
+.ti -1c
+.RI "int \fBfuncion_RplUaway_c\fP (char *command, int socket)"
+.br
+.ti -1c
+.RI "int \fBfuncion_RplNowaway_c\fP (char *command, int socket)"
+.br
+.ti -1c
+.RI "int \fBfuncion_quit_c\fP (char *command, int socket)"
+.br
+.in -1c
+.SH "Descripción detallada"
+.PP 
+: Funciones del módulo client funciones 
+
+
+.PP
+\fBAutor:\fP
+.RS 4
+Oscar Garcia de Lara Parreño & Santiago Gomez Aguirre\&. Grupo: 2311 
+.RE
+.PP
+\fBFecha:\fP
+.RS 4
+07-05-2017 
+.RE
+.PP
+
+.PP
+Definición en el archivo \fBG\-2311\-01\-P2_client_funciones\&.h\fP\&.
+.SH "Documentación de las funciones"
+.PP 
+.SS "int funcion_default_c (char * command, int socket)"
+Función que se activa por defecto al encontrar un comando desconocido para el cliente\&.  funcion_default_c 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIcommand\fP Cadena del comando recibido 
+.br
+\fIsocket\fP Socket en uso 
+.RE
+.PP
+\fBDevuelve:\fP
+.RS 4
+int: ERR dado que es un comando desconocido\&. 
+.RE
+.PP
+
+.SS "int funcion_endwhois_c (char * command, int socket)"
+Función que muestra en el cliente la información del final del comando whois\&.  funcion_endwhois_c 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIcommand\fP Cadena del comando recibido 
+.br
+\fIsocket\fP Socket en uso 
+.RE
+.PP
+\fBDevuelve:\fP
+.RS 4
+int: OK si cumple su funcionalidad sin errores\&. ERR si se produce cualquier error\&. 
+.RE
+.PP
+
+.SS "int funcion_join_c (char * command, int socket)"
+Función que incluye al cliente en un nuevo canal\&.  funcion_join_c 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIcommand\fP Cadena del comando recibido 
+.br
+\fIsocket\fP Socket en uso 
+.RE
+.PP
+\fBDevuelve:\fP
+.RS 4
+int: OK si cumple su funcionalidad sin errores\&. ERR si se produce cualquier error\&. 
+.RE
+.PP
+
+.SS "int funcion_kick_c (char * command, int socket)"
+Función que expulsa a un usuario de un canal del cliente\&.  funcion_kick_c 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIcommand\fP Cadena del comando recibido 
+.br
+\fIsocket\fP Socket en uso 
+.RE
+.PP
+\fBDevuelve:\fP
+.RS 4
+int: OK si cumple su funcionalidad sin errores\&. ERR si se produce cualquier error\&. 
+.RE
+.PP
+
+.SS "int funcion_mode_c (char * command, int socket)"
+Función que muestra en el cliente la información relativa a la acción que se haya realizado con el comando mode\&.  funcion_mode_c 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIcommand\fP Cadena del comando recibido 
+.br
+\fIsocket\fP Socket en uso 
+.RE
+.PP
+\fBDevuelve:\fP
+.RS 4
+int: OK si cumple su funcionalidad sin errores\&. ERR si se produce cualquier error\&. 
+.RE
+.PP
+
+.SS "int funcion_namend_c (char * command, int socket)"
+Función del cliente que recibe el comando name_end\&.  funcion_namend_c 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIcommand\fP Cadena del comando recibido 
+.br
+\fIsocket\fP Socket en uso 
+.RE
+.PP
+\fBDevuelve:\fP
+.RS 4
+int: OK dado que no se plantea ningún escenario de error\&. 
+.RE
+.PP
+
+.SS "int funcion_namrpl_c (char * command, int socket)"
+Función que muestra en el cliente los usuarios visibles en un canal\&.  funcion_namrpl_c 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIcommand\fP Cadena del comando recibido 
+.br
+\fIsocket\fP Socket en uso 
+.RE
+.PP
+\fBDevuelve:\fP
+.RS 4
+int: OK si cumple su funcionalidad sin errores\&. ERR si se produce cualquier error\&. 
+.RE
+.PP
+
+.SS "int funcion_nick_c (char * command, int socket)"
+Función que cambia el nick del cliente\&.  funcion_nick_c 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIcommand\fP Cadena del comando recibido 
+.br
+\fIsocket\fP Socket en uso 
+.RE
+.PP
+\fBDevuelve:\fP
+.RS 4
+int: OK si cumple su funcionalidad sin errores\&. ERR si se produce cualquier error\&. 
+.RE
+.PP
+
+.SS "int funcion_part_c (char * command, int socket)"
+Función que quita del cliente un canal en el que se estaba incluido\&.  funcion_part_c 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIcommand\fP Cadena del comando recibido 
+.br
+\fIsocket\fP Socket en uso 
+.RE
+.PP
+\fBDevuelve:\fP
+.RS 4
+int: OK si cumple su funcionalidad sin errores\&. ERR si se produce cualquier error\&. 
+.RE
+.PP
+
+.SS "int funcion_ping_c (char * command, int socket)"
+Función que muestra los mensajes de ping y pong en el cliente\&.  funcion_ping_c 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIcommand\fP Cadena del comando recibido 
+.br
+\fIsocket\fP Socket en uso 
+.RE
+.PP
+\fBDevuelve:\fP
+.RS 4
+int: OK si cumple su funcionalidad sin errores\&. ERR si se produce cualquier error\&. 
+.RE
+.PP
+
+.SS "int funcion_priv_c (char * command, int socket)"
+Función que muestra los mensajes privados recibidos o enviados en el cliente, incluyendo las peticiones de envío de archivos\&.  funcion_priv_c 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIcommand\fP Cadena del comando recibido 
+.br
+\fIsocket\fP Socket en uso 
+.RE
+.PP
+\fBDevuelve:\fP
+.RS 4
+int: OK si cumple su funcionalidad sin errores\&. ERR si se produce cualquier error\&. 
+.RE
+.PP
+
+.SS "int funcion_quit_c (char * command, int socket)"
+Función que cierra la sesión del cliente\&.  funcion_quit_c 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIcommand\fP Cadena del comando recibido 
+.br
+\fIsocket\fP Socket en uso 
+.RE
+.PP
+\fBDevuelve:\fP
+.RS 4
+int: ERR si se produce cualquier error que impida el cierre de sesión\&. 
+.RE
+.PP
+
+.SS "int funcion_RplendofMotd_c (char * command, int socket)"
+Función que muestra en el cliente el final del mensaje predefinido del servidor\&.  funcion_RplendofMotd_c 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIcommand\fP Cadena del comando recibido 
+.br
+\fIsocket\fP Socket en uso 
+.RE
+.PP
+\fBDevuelve:\fP
+.RS 4
+int: OK si cumple su funcionalidad sin errores\&. ERR si se produce cualquier error\&. 
+.RE
+.PP
+
+.SS "int funcion_RplList_c (char * command, int socket)"
+Función que muestra en el cliente toda la información obtenida de la realización del comando list\&.  funcion_RplList_c 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIcommand\fP Cadena del comando recibido 
+.br
+\fIsocket\fP Socket en uso 
+.RE
+.PP
+\fBDevuelve:\fP
+.RS 4
+int: OK si cumple su funcionalidad sin errores\&. ERR si se produce cualquier error\&. 
+.RE
+.PP
+
+.SS "int funcion_RplListEnd_c (char * command, int socket)"
+Función que muestra en el cliente el mensaje final de la realización del comando list\&.  funcion_RplListEnd_c 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIcommand\fP Cadena del comando recibido 
+.br
+\fIsocket\fP Socket en uso 
+.RE
+.PP
+\fBDevuelve:\fP
+.RS 4
+int: OK si cumple su funcionalidad sin errores\&. ERR si se produce cualquier error\&. 
+.RE
+.PP
+
+.SS "int funcion_RplMotd_c (char * command, int socket)"
+Función que muestra en el cliente el cuerpo del mensaje predefinido del servidor\&.  funcion_RplMotd_c 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIcommand\fP Cadena del comando recibido 
+.br
+\fIsocket\fP Socket en uso 
+.RE
+.PP
+\fBDevuelve:\fP
+.RS 4
+int: OK si cumple su funcionalidad sin errores\&. ERR si se produce cualquier error\&. 
+.RE
+.PP
+
+.SS "int funcion_RplMotdstart_c (char * command, int socket)"
+Función que muestra en el cliente el comienzo del mensaje predefinido del servidor\&.  funcion_RplMotdstart_c 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIcommand\fP Cadena del comando recibido 
+.br
+\fIsocket\fP Socket en uso 
+.RE
+.PP
+\fBDevuelve:\fP
+.RS 4
+int: OK si cumple su funcionalidad sin errores\&. ERR si se produce cualquier error\&. 
+.RE
+.PP
+
+.SS "int funcion_RplNoTopic_c (char * command, int socket)"
+Función que muestra en el cliente el topic del canal o el mensaje informativo de que no hay topic en el canal\&.  funcion_RplNoTopic_c 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIcommand\fP Cadena del comando recibido 
+.br
+\fIsocket\fP Socket en uso 
+.RE
+.PP
+\fBDevuelve:\fP
+.RS 4
+int: OK si cumple su funcionalidad sin errores\&. ERR si se produce cualquier error\&. 
+.RE
+.PP
+
+.SS "int funcion_RplNowaway_c (char * command, int socket)"
+Función que muestra en el cliente el mensaje de realizar el comando away\&.  funcion_RplNowaway_c 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIcommand\fP Cadena del comando recibido 
+.br
+\fIsocket\fP Socket en uso 
+.RE
+.PP
+\fBDevuelve:\fP
+.RS 4
+int: OK si cumple su funcionalidad sin errores\&. ERR si se produce cualquier error\&. 
+.RE
+.PP
+
+.SS "int funcion_RplTopic_c (char * command, int socket)"
+Función que muestra en el cliente el cambio del topic de un canal\&.  funcion_RplTopic_c 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIcommand\fP Cadena del comando recibido 
+.br
+\fIsocket\fP Socket en uso 
+.RE
+.PP
+\fBDevuelve:\fP
+.RS 4
+int: OK si cumple su funcionalidad sin errores\&. ERR si se produce cualquier error\&. 
+.RE
+.PP
+
+.SS "int funcion_RplUaway_c (char * command, int socket)"
+Función que muestra en el cliente el mensaje de desactivación del comando away\&.  funcion_RplUaway_c 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIcommand\fP Cadena del comando recibido 
+.br
+\fIsocket\fP Socket en uso 
+.RE
+.PP
+\fBDevuelve:\fP
+.RS 4
+int: OK dado que no se plantea ningún escenario de error\&. 
+.RE
+.PP
+
+.SS "int funcion_rplwelcome_c (char * command, int socket)"
+Función que muestra en la interfaz del cliente el mensaje de bienvenida\&.  funcion_rplwelcome_c 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIcommand\fP Cadena del comando recibido 
+.br
+\fIsocket\fP Socket en uso 
+.RE
+.PP
+\fBDevuelve:\fP
+.RS 4
+int: OK si cumple su funcionalidad sin errores\&. ERR si se produce cualquier error\&. 
+.RE
+.PP
+
+.SS "int funcion_RplWhoEnd_c (char * command, int socket)"
+Función del cliente que recibe el comando who_end\&.  funcion_RplWhoEnd_c 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIcommand\fP Cadena del comando recibido 
+.br
+\fIsocket\fP Socket en uso 
+.RE
+.PP
+\fBDevuelve:\fP
+.RS 4
+int: OK dado que no se plantea ningún escenario de error\&. 
+.RE
+.PP
+
+.SS "int funcion_RplWhoReply_c (char * command, int socket)"
+Función que representa el comando who en el cliente\&.  funcion_RplWhoReply_c 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIcommand\fP Cadena del comando recibido 
+.br
+\fIsocket\fP Socket en uso 
+.RE
+.PP
+\fBDevuelve:\fP
+.RS 4
+int: OK si cumple su funcionalidad sin errores\&. ERR si se produce cualquier error\&. 
+.RE
+.PP
+
+.SS "int funcion_whoischannels_c (char * command, int socket)"
+Función que muestra en el cliente la información relativa a los canales en los que se encuentra el usuario sobre el que se ha realizado el comando whois\&.  funcion_whoischannels_c 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIcommand\fP Cadena del comando recibido 
+.br
+\fIsocket\fP Socket en uso 
+.RE
+.PP
+\fBDevuelve:\fP
+.RS 4
+int: OK si cumple su funcionalidad sin errores\&. ERR si se produce cualquier error\&. 
+.RE
+.PP
+
+.SS "int funcion_whoisidle_c (char * command, int socket)"
+Función que muestra en el cliente la información relativa a la actividad del usuario sobre el que se ha realizado el comando whois\&.  funcion_whoisidle_c 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIcommand\fP Cadena del comando recibido 
+.br
+\fIsocket\fP Socket en uso 
+.RE
+.PP
+\fBDevuelve:\fP
+.RS 4
+int: OK si cumple su funcionalidad sin errores\&. ERR si se produce cualquier error\&. 
+.RE
+.PP
+
+.SS "int funcion_whoisserver_c (char * command, int socket)"
+Función que muestra en el cliente la información relativa al servidor en el que se ha realizado un comando whois\&.  funcion_whoisserver_c 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIcommand\fP Cadena del comando recibido 
+.br
+\fIsocket\fP Socket en uso 
+.RE
+.PP
+\fBDevuelve:\fP
+.RS 4
+int: OK si cumple su funcionalidad sin errores\&. ERR si se produce cualquier error\&. 
+.RE
+.PP
+
+.SS "int funcion_whoisuser_c (char * command, int socket)"
+Función que muestra en el cliente la información relativa a un usuario sobre el que se ha realizado un comando whois\&.  funcion_whoisuser_c 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIcommand\fP Cadena del comando recibido 
+.br
+\fIsocket\fP Socket en uso 
+.RE
+.PP
+\fBDevuelve:\fP
+.RS 4
+int: OK si cumple su funcionalidad sin errores\&. ERR si se produce cualquier error\&. 
+.RE
+.PP
+
+.SS "int inicializar_array_c ()"
+Función que inicializa la lista de comandos que acepta el cliente\&.  inicializar_array_c 
+.PP
+\fBDevuelve:\fP
+.RS 4
+int: OK dado que no se contempla ningún escenario de error\&. 
+.RE
+.PP
+
+.SS "void* launch_recvfile (void * pr)"
+Función que recibe los archivos que envían al cliente\&.  launch_recvfile 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIpr\fP Estructura con la información necesaria para poder recibir el archivo 
+.RE
+.PP
+
+.SH "Autor"
+.PP 
+Generado automáticamente por Doxygen para Redes 2 del código fuente\&.

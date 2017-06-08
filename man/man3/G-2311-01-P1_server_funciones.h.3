@@ -1,0 +1,358 @@
+.TH "includes/G-2311-01-P1_server_funciones.h" 3 "Domingo, 7 de Mayo de 2017" "Redes 2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+includes/G-2311-01-P1_server_funciones.h \- : Funciones del módulo server funciones  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'G\-2311\-01\-P1_general\&.h'\fP
+.br
+\fC#include 'G\-2311\-01\-P1_utils\&.h'\fP
+.br
+
+.SS "Funciones"
+
+.in +1c
+.ti -1c
+.RI "int \fBinicializar_array\fP ()"
+.br
+.ti -1c
+.RI "int \fBfuncion_default\fP (char *command, int socket)"
+.br
+.ti -1c
+.RI "int \fBfuncion_nick\fP (char *command, int socket)"
+.br
+.ti -1c
+.RI "int \fBfuncion_user\fP (char *command, int socket)"
+.br
+.ti -1c
+.RI "int \fBfuncion_join\fP (char *command, int socket)"
+.br
+.ti -1c
+.RI "int \fBfuncion_list\fP (char *command, int socket)"
+.br
+.ti -1c
+.RI "int \fBfuncion_whois\fP (char *command, int socket)"
+.br
+.ti -1c
+.RI "int \fBfuncion_names\fP (char *command, int socket)"
+.br
+.ti -1c
+.RI "int \fBfuncion_privmsg\fP (char *command, int socket)"
+.br
+.ti -1c
+.RI "int \fBfuncion_ping\fP (char *command, int socket)"
+.br
+.ti -1c
+.RI "int \fBfuncion_part\fP (char *command, int socket)"
+.br
+.ti -1c
+.RI "int \fBfuncion_topic\fP (char *command, int socket)"
+.br
+.ti -1c
+.RI "int \fBfuncion_kick\fP (char *command, int socket)"
+.br
+.ti -1c
+.RI "int \fBfuncion_away\fP (char *command, int socket)"
+.br
+.ti -1c
+.RI "int \fBfuncion_quit\fP (char *command, int socket)"
+.br
+.ti -1c
+.RI "int \fBfuncion_motd\fP (char *command, int socket)"
+.br
+.ti -1c
+.RI "int \fBfuncion_mode\fP (char *command, int socket)"
+.br
+.in -1c
+.SH "Descripción detallada"
+.PP 
+: Funciones del módulo server funciones 
+
+
+.PP
+\fBAutor:\fP
+.RS 4
+Oscar Garcia de Lara Parreño & Santiago Gomez Aguirre\&. Grupo: 2311 
+.RE
+.PP
+\fBFecha:\fP
+.RS 4
+07-05-2017 
+.RE
+.PP
+
+.PP
+Definición en el archivo \fBG\-2311\-01\-P1_server_funciones\&.h\fP\&.
+.SH "Documentación de las funciones"
+.PP 
+.SS "int funcion_away (char * command, int socket)"
+Función que establece que cualquier comando de mensaje privado se dirija al cliente en vez de a un canal\&.  funcion_away 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIcommand\fP Cadena del comando recibido 
+.br
+\fIsocket\fP Socket en uso 
+.RE
+.PP
+\fBDevuelve:\fP
+.RS 4
+int: OK si cumple su funcionalidad sin errores\&. ERR si se produce cualquier error\&. 
+.RE
+.PP
+
+.SS "int funcion_default (char * command, int socket)"
+Función que se activa por defecto al encontrar un comando desconocido para el servidor\&.  funcion_default 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIcommand\fP Cadena del comando recibido 
+.br
+\fIsocket\fP Socket en uso 
+.RE
+.PP
+\fBDevuelve:\fP
+.RS 4
+int: ERR dado que es un comando desconocido\&. 
+.RE
+.PP
+
+.SS "int funcion_join (char * command, int socket)"
+Función que incluye al cliente a un canal específico\&.  funcion_join 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIcommand\fP Cadena del comando recibido 
+.br
+\fIsocket\fP Socket en uso 
+.RE
+.PP
+\fBDevuelve:\fP
+.RS 4
+int: OK si se incluye al usuario en el canal o no se puede incluir por: -Canal lleno\&. -Nombre de canal mal introducido\&. -Usuario banneado en el canal\&. -Usuario sin invitación al canal\&. -Contraseña del canal incorrecta\&. -Falta de algún parámetro obligatorio\&. ERR si se produce cualquier otro error\&. 
+.RE
+.PP
+
+.SS "int funcion_kick (char * command, int socket)"
+Función que expulsa de un canal a un usuario objetivo\&.  funcion_kick 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIcommand\fP Cadena del comando recibido 
+.br
+\fIsocket\fP Socket en uso 
+.RE
+.PP
+\fBDevuelve:\fP
+.RS 4
+int: OK si expulsa del canal al usuario objetivo o no se puede realizar por no ser operador\&. ERR si se produce cualquier error\&. 
+.RE
+.PP
+
+.SS "int funcion_list (char * command, int socket)"
+Función que lista los canales y sus topics\&.  funcion_list 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIcommand\fP Cadena del comando recibido 
+.br
+\fIsocket\fP Socket en uso 
+.RE
+.PP
+\fBDevuelve:\fP
+.RS 4
+int: OK si cumple su funcionalidad sin errores\&. ERR si se produce cualquier error\&. 
+.RE
+.PP
+
+.SS "int funcion_mode (char * command, int socket)"
+Función que permite al cliente cambiar o consultar características de un canal\&.  funcion_mode 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIcommand\fP Cadena del comando recibido 
+.br
+\fIsocket\fP Socket en uso 
+.RE
+.PP
+\fBDevuelve:\fP
+.RS 4
+int: OK si cumple su funcionalidad sin errores o no se es operador del canal\&. ERR si se produce cualquier otro error\&. 
+.RE
+.PP
+
+.SS "int funcion_motd (char * command, int socket)"
+Función que envía el mensaje predefinido del servidor\&.  funcion_motd 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIcommand\fP Cadena del comando recibido 
+.br
+\fIsocket\fP Socket en uso 
+.RE
+.PP
+\fBDevuelve:\fP
+.RS 4
+int: OK si cumple su funcionalidad sin errores\&. ERR si se produce cualquier error\&. 
+.RE
+.PP
+
+.SS "int funcion_names (char * command, int socket)"
+Función que muestra todos los usuarios visibles en un canal\&.  funcion_names 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIcommand\fP Cadena del comando recibido 
+.br
+\fIsocket\fP Socket en uso 
+.RE
+.PP
+\fBDevuelve:\fP
+.RS 4
+int: OK si cumple su funcionalidad sin errores\&. ERR si se produce cualquier error\&. 
+.RE
+.PP
+
+.SS "int funcion_nick (char * command, int socket)"
+Función que da un nickname al usuario o cambia el existente\&.  funcion_nick 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIcommand\fP Cadena del comando recibido 
+.br
+\fIsocket\fP Socket en uso 
+.RE
+.PP
+\fBDevuelve:\fP
+.RS 4
+int: OK si el nickname se actualiza sin errores o no se puede actualizar porque ya existe uno igual en uso\&. ERR si se produce cualquier otro error\&. 
+.RE
+.PP
+
+.SS "int funcion_part (char * command, int socket)"
+Función que saca al cliente de la lista de usuarios activos de los canales indicados\&.  funcion_part 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIcommand\fP Cadena del comando recibido 
+.br
+\fIsocket\fP Socket en uso 
+.RE
+.PP
+\fBDevuelve:\fP
+.RS 4
+int: OK si cumple su funcionalidad sin errores\&. ERR si se produce cualquier error\&. 
+.RE
+.PP
+
+.SS "int funcion_ping (char * command, int socket)"
+Función que envía un mensaje ping a un usuario o responde al servidor con un mensaje pong\&.  funcion_ping 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIcommand\fP Cadena del comando recibido 
+.br
+\fIsocket\fP Socket en uso 
+.RE
+.PP
+\fBDevuelve:\fP
+.RS 4
+int: OK si cumple su funcionalidad sin errores\&. ERR si se produce cualquier error\&. 
+.RE
+.PP
+
+.SS "int funcion_privmsg (char * command, int socket)"
+Función que envía un mensaje privado entre dos usuarios o a un canal\&.  funcion_privmsg 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIcommand\fP Cadena del comando recibido 
+.br
+\fIsocket\fP Socket en uso 
+.RE
+.PP
+\fBDevuelve:\fP
+.RS 4
+int: OK si cumple su funcionalidad sin errores\&. ERR si se produce cualquier error\&. 
+.RE
+.PP
+
+.SS "int funcion_quit (char * command, int socket)"
+Función que termina la sesión del cliente con un mensaje de cierre\&.  funcion_quit 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIcommand\fP Cadena del comando recibido 
+.br
+\fIsocket\fP Socket en uso 
+.RE
+.PP
+\fBDevuelve:\fP
+.RS 4
+int: OK si cumple su funcionalidad sin errores\&. ERR si se produce cualquier error\&. 
+.RE
+.PP
+
+.SS "int funcion_topic (char * command, int socket)"
+Función que establece o cambia el topic de un canal\&.  funcion_topic 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIcommand\fP Cadena del comando recibido 
+.br
+\fIsocket\fP Socket en uso 
+.RE
+.PP
+\fBDevuelve:\fP
+.RS 4
+int: OK si cumple su funcionalidad o no se puede cumplir por: -Nombre de canal incorrecto\&. -Canal con topic protegido del que no se es operador\&. ERR si se produce cualquier otro error\&. 
+.RE
+.PP
+
+.SS "int funcion_user (char * command, int socket)"
+Función que especifíca el username, hostname y realname de un nuevo usuario\&.  funcion_user 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIcommand\fP Cadena del comando recibido 
+.br
+\fIsocket\fP Socket en uso 
+.RE
+.PP
+\fBDevuelve:\fP
+.RS 4
+int: OK si cumple su funcionalidad sin errores\&. ERR si se produce cualquier error\&. 
+.RE
+.PP
+
+.SS "int funcion_whois (char * command, int socket)"
+Función que devuelve toda la información de los usuarios objetivo\&.  funcion_whois 
+.PP
+\fBParámetros:\fP
+.RS 4
+\fIcommand\fP Cadena del comando recibido 
+.br
+\fIsocket\fP Socket en uso 
+.RE
+.PP
+\fBDevuelve:\fP
+.RS 4
+int: OK si se muestra la información sin errores o falta algún argumento obligatorio\&. ERR si se produce cualquier error\&. 
+.RE
+.PP
+
+.SS "int inicializar_array ()"
+Función que inicializa la lista de comandos que acepta el servidor\&.  inicializar_array 
+.PP
+\fBDevuelve:\fP
+.RS 4
+int: OK dado que no se contempla ningún escenario de error\&. 
+.RE
+.PP
+
+.SH "Autor"
+.PP 
+Generado automáticamente por Doxygen para Redes 2 del código fuente\&.
